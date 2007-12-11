@@ -30,7 +30,7 @@ Requires:	jakarta-commons-httpclient
 Requires:	jakarta-commons-io
 Requires:	jakarta-commons-lang
 Requires:	jakarta-commons-logging
-Requires:	javamail >= 1.4
+Requires:	javamail
 Requires:	logging-log4j
 Requires:	servlet
 BuildArch:	noarch
