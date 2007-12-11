@@ -1,20 +1,11 @@
 # TODO
 # - daemon and startup script
 # - external packages:
-#   /usr/share/gcaldaemon/license/activation-license.txt
-#   /usr/share/gcaldaemon/license/commons-codec-license.txt
-#   /usr/share/gcaldaemon/license/commons-collections-license.txt
-#   /usr/share/gcaldaemon/license/commons-httpclient-license.txt
-#   /usr/share/gcaldaemon/license/commons-io-license.txt
-#   /usr/share/gcaldaemon/license/commons-lang-license.txt
-#   /usr/share/gcaldaemon/license/commons-logging-license.txt
 #   /usr/share/gcaldaemon/license/g4j-license.txt
 #   /usr/share/gcaldaemon/license/gcaldaemon-license.txt
 #   /usr/share/gcaldaemon/license/google-license.txt
 #   /usr/share/gcaldaemon/license/ical4j-license.txt
 #   /usr/share/gcaldaemon/license/jdom-license.txt
-#   /usr/share/gcaldaemon/license/log4j-license.txt
-#   /usr/share/gcaldaemon/license/mail-license.txt
 #   /usr/share/gcaldaemon/license/rome-license.txt
 #   /usr/share/gcaldaemon/license/shared-asn1-license.txt
 #   /usr/share/gcaldaemon/license/shared-ldap-license.txt
@@ -23,7 +14,7 @@
 Summary:	gcaldaemon
 Name:		gcaldaemon
 Version:	1.0
-Release:	0.1
+Release:	0.4
 License:	LGPL v2
 Group:		Applications
 Source0:	http://dl.sourceforge.net/gcaldaemon/%{name}-linux-%{version}-beta14.zip
@@ -32,6 +23,16 @@ URL:		http://gcaldaemon.sourceforge.net/
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+Requires:	jaf
+Requires:	jakarta-commons-codec
+Requires:	jakarta-commons-collections
+Requires:	jakarta-commons-httpclient
+Requires:	jakarta-commons-io
+Requires:	jakarta-commons-lang
+Requires:	jakarta-commons-logging
+Requires:	javamail >= 1.4
+Requires:	logging-log4j
+Requires:	servlet
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,6 +56,16 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_appdir},%{_bindir}}
 cd GCALDaemon
 cp -a bin conf lang lib log work $RPM_BUILD_ROOT%{_appdir}
+ln -nfs %{_javadir}/jaf.jar  $RPM_BUILD_ROOT%{_appdir}/lib/activation.jar
+ln -nfs %{_javadir}/mail.jar  $RPM_BUILD_ROOT%{_appdir}/lib/mail.jar
+ln -nfs %{_javadir}/servlet.jar  $RPM_BUILD_ROOT%{_appdir}/lib/servlet-api.jar
+ln -nfs %{_javadir}/commons-codec.jar  $RPM_BUILD_ROOT%{_appdir}/lib/commons-codec.jar
+ln -nfs %{_javadir}/commons-collections.jar  $RPM_BUILD_ROOT%{_appdir}/lib/commons-collections.jar
+ln -nfs %{_javadir}/commons-httpclient.jar  $RPM_BUILD_ROOT%{_appdir}/lib/commons-httpclient.jar
+ln -nfs %{_javadir}/commons-io.jar  $RPM_BUILD_ROOT%{_appdir}/lib/commons-io.jar
+ln -nfs %{_javadir}/commons-lang.jar  $RPM_BUILD_ROOT%{_appdir}/lib/commons-lang.jar
+ln -nfs %{_javadir}/commons-logging.jar  $RPM_BUILD_ROOT%{_appdir}/lib/commons-logging.jar
+ln -nfs %{_javadir}/log4j.jar  $RPM_BUILD_ROOT%{_appdir}/lib/logger.jar
 
 %clean
 rm -rf $RPM_BUILD_ROOT
