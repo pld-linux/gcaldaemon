@@ -14,7 +14,7 @@
 Summary:	gcaldaemon
 Name:		gcaldaemon
 Version:	1.0
-Release:	0.4
+Release:	0.5
 License:	LGPL v2
 Group:		Applications
 Source0:	http://dl.sourceforge.net/gcaldaemon/%{name}-linux-%{version}-beta14.zip
@@ -26,7 +26,7 @@ BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jaf
 Requires:	jakarta-commons-codec
 Requires:	jakarta-commons-collections
-Requires:	jakarta-commons-httpclient
+Requires:	jakarta-commons-httpclient >= 3.0
 Requires:	jakarta-commons-io
 Requires:	jakarta-commons-lang
 Requires:	jakarta-commons-logging
