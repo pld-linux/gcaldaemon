@@ -11,7 +11,8 @@
 #   /usr/share/gcaldaemon/license/shared-ldap-license.txt
 #   /usr/share/gcaldaemon/license/wrapper-license.txt
 %include	/usr/lib/rpm/macros.java
-Summary:	gcaldaemon
+Summary:	GCALDaemon - synchronizing Google Calendar with iCalendar-compatible applications
+Summary(pl.UTF-8):	GCALDaemon - synchronizacja Google Calendar z aplikacjami zgodnymi z iCalendar
 Name:		gcaldaemon
 Version:	1.0
 Release:	0.5
@@ -45,11 +46,19 @@ compatible calendar applications. GCALDaemon is primarily designed as
 a calendar synchronizer but it can also be used as a Gmail notifier,
 Address Book importer, Gmail terminal and RSS feed converter.
 
+%description -l pl.UTF-8
+GCALDaemon to niezależny od systemu operacyjnego program w Javie
+oferujący dwustronną synchronizację między usługą Google Calendar a
+różnymi aplikacjami kalendarzy zgodnymi ze specyfikacją iCalendar.
+GCALDaemon był oryginalnie projektowany do synchronizowania
+kalendarzy, ale może być używany także do powiadamiania przez Gmail,
+importowania książki adresowej, jako terminal do Gmaila i konwerter
+feedów RSS.
+
 %prep
 %setup -qc
-cd GCALDaemon
 
-%{__sed} -i -e 's,\r$,,' bin/reload-calendar.scpt
+%{__sed} -i -e 's,\r$,,' GCALDaemon/bin/reload-calendar.scpt
 
 %install
 rm -rf $RPM_BUILD_ROOT
