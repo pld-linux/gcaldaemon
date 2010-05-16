@@ -24,6 +24,7 @@ URL:		http://gcaldaemon.sourceforge.net/
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	unzip
 Requires:	jaf
 Requires:	jakarta-commons-codec
 Requires:	jakarta-commons-collections
