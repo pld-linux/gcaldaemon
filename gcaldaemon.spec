@@ -10,7 +10,6 @@
 #   /usr/share/gcaldaemon/license/shared-asn1-license.txt
 #   /usr/share/gcaldaemon/license/shared-ldap-license.txt
 #   /usr/share/gcaldaemon/license/wrapper-license.txt
-%include	/usr/lib/rpm/macros.java
 Summary:	GCALDaemon - synchronizing Google Calendar with iCalendar-compatible applications
 Summary(pl.UTF-8):	GCALDaemon - synchronizacja Google Calendar z aplikacjami zgodnymi z iCalendar
 Name:		gcaldaemon
